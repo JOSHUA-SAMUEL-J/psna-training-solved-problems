@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) {
+         Scanner sc = new Scanner(System.in);
+        int dividend = sc.nextInt();
+        int divisor = sc.nextInt();
+        int quotient = 0;
+        int sign = 1;
+        // Handle negative numbers
+        if (dividend < 0) {
+            dividend = -dividend;
+            sign *= -1;
+        }
+        if (divisor < 0) {
+            divisor = -divisor;
+            sign *= -1;
+        }
+        while (dividend >= divisor) {
+            dividend -= divisor;
+            quotient++;
+        }
+        System.out.println(sign * quotient);
+        sc.close();
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
